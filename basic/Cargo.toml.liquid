@@ -1,0 +1,19 @@
+[package]
+name = "{{crate_name}}"
+version = "0.1.0"
+edition = "2021"
+description = "{{description}}"
+authors = [ "{{authors}}" ]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+{% if crate_type == "bin" %}clap = { version = "^3", features = ["derive"] }
+clap_complete = "3.1.1"
+shellexpand = "2.1"
+{% endif %}
+
+{% if crate_type == "bin" %}[[bin]]
+name="{{crate_name}}"
+path="bin/{{crate_name}}"
+{% endif %}

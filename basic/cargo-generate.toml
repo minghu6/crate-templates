@@ -1,0 +1,10 @@
+[template]
+cargo_generate_version = ">=0.15.2"
+
+[hooks]
+pre = [
+    "fix-cargo.rhai"
+]
+
+[conditional.'crate_type == "lib"']
+exclude = ["bin"]
