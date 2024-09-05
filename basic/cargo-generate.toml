@@ -7,4 +7,4 @@ pre = [
 ]
 
 [conditional.'crate_type == "lib"']
-exclude = ["bin"]
+ignore = ["bin"]
